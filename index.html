@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nutricionista Ariana Silva · Plano de divulgação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F8F1; --surface:#FFFFFF; --surface2:#E8EFE4; --ink:#143D36; --ink2:#4A6660;
+  --river:#1F7A6D; --hero:#175A50; --on-hero:#F7F8F1; --line:#D3DDCF;
+  --btn-bg:#C9304A; --btn-ink:#FFFFFF; --melon:#E4485F; --sun:#F5C44E; --focus:#1F7A6D;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E2521; --surface:#163530; --surface2:#1B403A; --ink:#E6F1E8; --ink2:#A3BDB4;
+    --river:#4FB8A6; --hero:#123F38; --on-hero:#F1F7EF; --line:#2A4B44;
+    --btn-bg:#FF7A8E; --btn-ink:#3A0A14; --melon:#FF6F84; --focus:#F5C44E;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E2521; --surface:#163530; --surface2:#1B403A; --ink:#E6F1E8; --ink2:#A3BDB4;
+  --river:#4FB8A6; --hero:#123F38; --on-hero:#F1F7EF; --line:#2A4B44;
+  --btn-bg:#FF7A8E; --btn-ink:#3A0A14; --melon:#FF6F84; --focus:#F5C44E;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{
+  margin:0;min-height:100%;background:var(--bg);color:var(--ink);
+  font-family:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  font-size:1.0625rem;line-height:1.55;-webkit-text-size-adjust:100%;
+}
+h1,h2,h3{font-family:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;line-height:1.15;margin:0;letter-spacing:-.01em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+.top{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+  background:var(--bg);border-bottom:1px solid var(--line);
+}
+.top-in{max-width:760px;margin:0 auto;padding:14px 18px 0}
+.top h1{font-size:1.5rem;font-weight:700}
+.top .sub{color:var(--ink2);font-size:.95rem;margin-top:2px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:12px 0 12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto;border:1px solid var(--line);background:transparent;color:var(--ink2);
+  padding:8px 16px;border-radius:999px;font-weight:600;font-size:.95rem;
+}
+.tab[aria-current="page"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+main{max-width:760px;margin:0 auto;padding:20px 18px 64px}
+section[hidden]{display:none}
+
+/* Hero com o prato */
+.hero{
+  background:var(--hero);color:var(--on-hero);border-radius:26px;padding:22px 20px 24px;
+  display:grid;gap:18px;grid-template-columns:1fr;justify-items:center;text-align:center;
+}
+.plate{width:min(260px,72vw);height:auto;display:block}
+.plate .dot{fill:rgba(247,248,241,.22);cursor:pointer}
+.plate .dot.done{fill:var(--melon)}
+.plate .dot.today{fill:var(--sun)}
+.plate .dot.view{stroke:#fff;stroke-width:3}
+.plate text{fill:var(--on-hero);text-anchor:middle;font-family:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif}
+.hero-txt{display:grid;gap:10px;justify-items:center}
+.hero h2{font-size:clamp(1.6rem,6vw,2.2rem);font-weight:700;max-width:22ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{
+  display:inline-block;padding:3px 12px;border-radius:999px;font-size:.88rem;font-weight:600;
+  background:rgba(247,248,241,.16);color:var(--on-hero);
+}
+.hero .meta{opacity:.85;font-size:.95rem}
+.start-form{display:grid;gap:12px;justify-items:center;width:100%;max-width:340px}
+.start-form label{font-size:.95rem;opacity:.9}
+.start-form input[type=date]{
+  width:100%;padding:11px 12px;border-radius:12px;border:2px solid rgba(247,248,241,.4);
+  background:rgba(247,248,241,.1);color:var(--on-hero);font:inherit;color-scheme:dark;
+}
+
+.btn{
+  border:0;border-radius:14px;padding:12px 20px;font-weight:600;
+  background:var(--btn-bg);color:var(--btn-ink);
+}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
+.btn.soft{background:var(--surface2);color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+
+.stack{display:grid;gap:14px;margin-top:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card .hook{font-family:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;font-size:1.3rem;line-height:1.3;font-weight:500}
+.card ul{margin:0;padding-left:1.15em;display:grid;gap:6px}
+.card ul li::marker{color:var(--river)}
+.copytext{white-space:pre-wrap;background:var(--surface2);border-radius:12px;padding:14px;margin:0 0 12px;font-size:1rem}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.nav-days{display:flex;justify-content:space-between;gap:10px;margin-top:4px}
+
+/* Plano */
+.weeks{display:grid;gap:22px;margin-top:4px}
+.week h3{font-size:1.2rem;margin:0 0 8px}
+.week .wnote{color:var(--ink2);font-size:.95rem;margin-bottom:8px}
+.days{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden}
+.day{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:6px 12px;padding:10px 14px;border-top:1px solid var(--line)}
+.day:first-child{border-top:0}
+.day input{width:22px;height:22px;accent-color:var(--river)}
+.day .open{
+  text-align:left;background:none;border:0;padding:6px 0;display:grid;gap:2px;
+}
+.day .open b{font-weight:600}
+.day .open span{color:var(--ink2);font-size:.9rem}
+.day.is-today{background:var(--surface2)}
+.day.is-done .open b{text-decoration:line-through;text-decoration-thickness:1.5px;color:var(--ink2)}
+
+/* Públicos e perfil */
+.grid2{display:grid;gap:14px}
+@media (min-width:640px){.grid2{grid-template-columns:1fr 1fr}.hero{grid-template-columns:auto 1fr;text-align:left;justify-items:start}.hero-txt{justify-items:start}.chips{justify-content:flex-start}}
+.say{margin-top:10px;padding:10px 12px;border-left:4px solid var(--sun);background:var(--surface2);border-radius:0 10px 10px 0;font-size:.98rem}
+.lead{color:var(--ink2);margin:0 0 4px}
+.title{font-size:1.5rem;margin:6px 0 10px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}
+.check:first-of-type{border-top:0}
+.check input{width:22px;height:22px;margin-top:2px;accent-color:var(--river);flex:0 0 auto}
+.check label{cursor:pointer}
+.prog{height:10px;background:var(--surface2);border-radius:999px;overflow:hidden;margin:10px 0 4px}
+.prog i{display:block;height:100%;background:var(--river);width:0;transition:width .3s}
+.cities{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.cities span{background:var(--surface2);border-radius:999px;padding:3px 12px;font-size:.92rem}
+.note{color:var(--ink2);font-size:.92rem;margin-top:16px}
+
+#toast{
+  position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:600;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;
+}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <h1>Nutricionista Ariana Silva</h1>
+    <p class="sub">Plano de divulgação para aumentar as consultas · Delmiro Gouveia, AL</p>
+    <nav class="tabs" aria-label="Seções do guia">
+      <button class="tab" data-tab="hoje">Hoje</button>
+      <button class="tab" data-tab="plano">Plano de 30 dias</button>
+      <button class="tab" data-tab="publicos">Público</button>
+      <button class="tab" data-tab="perfil">Perfil e agenda</button>
+      <button class="tab" data-tab="regras">Regras do CFN</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="tab-hoje" aria-label="Post de hoje"></section>
+
+  <section id="tab-plano" aria-label="Plano de 30 dias" hidden>
+    <h2 class="title">Plano de 30 dias</h2>
+    <p class="lead">Marque cada post como feito. Toque no título para abrir o texto pronto.</p>
+    <div class="weeks" id="weeks"></div>
+  </section>
+
+  <section id="tab-publicos" aria-label="Público" hidden>
+    <h2 class="title">Fale com cada fase da vida</h2>
+    <p class="lead">De 20 a 60 anos as necessidades são diferentes. Alterne os posts entre os três grupos e diga no texto para quem ele é.</p>
+    <div class="stack">
+      <article class="card">
+        <h3>20 a 30 anos</h3>
+        <ul>
+          <li>Emagrecer sem dieta radical e sem passar fome</li>
+          <li>Ansiedade com comida e rotina corrida</li>
+          <li>Ganho de massa para quem treina em academia</li>
+          <li>Marmitas fáceis e baratas</li>
+        </ul>
+        <p class="say">Fale assim: “Treina, mas o corpo não muda? Talvez falte ajustar o prato.”</p>
+      </article>
+      <article class="card">
+        <h3>30 a 45 anos</h3>
+        <ul>
+          <li>Mulheres: pós-gestação, TPM, cansaço e retenção</li>
+          <li>Homens: barriga, colesterol e disposição</li>
+          <li>Como comer bem com trabalho e filhos</li>
+        </ul>
+        <p class="say">Fale assim: “Sem tempo para cozinhar? Veja como montar o prato em 10 minutos.”</p>
+      </article>
+      <article class="card">
+        <h3>45 a 60 anos</h3>
+        <ul>
+          <li>Menopausa e andropausa</li>
+          <li>Glicose, colesterol e pressão no dia a dia</li>
+          <li>Manter massa muscular e disposição</li>
+          <li>Prevenção com alimentação</li>
+        </ul>
+        <p class="say">Fale assim: “Depois dos 45 o corpo pede ajustes. Vou te mostrar por onde começar.”</p>
+      </article>
+      <article class="card">
+        <h3>Comida da nossa região</h3>
+        <p class="lead">O maior diferencial de uma nutricionista do interior é falar do que as pessoas comem de verdade.</p>
+        <ul>
+          <li>Cuscuz, macaxeira, inhame e tapioca: pode ou não pode?</li>
+          <li>Carne de sol e queijo coalho na alimentação do dia a dia</li>
+          <li>Feijão à noite, suco de fruta, calor do sertão e hidratação</li>
+          <li>Marmita de trabalhador com ingredientes da feira</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Consulta online para a região</h3>
+        <p>Muita gente de fora de Delmiro Gouveia pode ser atendida por vídeo. Faça um post dizendo isso.</p>
+        <div class="cities"><span>Água Branca</span><span>Pariconha</span><span>Olho d’Água do Casado</span><span>Piranhas</span><span>Mata Grande</span><span>Paulo Afonso (BA)</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="tab-perfil" aria-label="Perfil e agenda" hidden>
+    <h2 class="title">Perfil e agenda</h2>
+    <p class="lead">Post bom não enche a agenda sozinho. Confira se o caminho até a consulta está fácil.</p>
+    <div class="stack">
+      <article class="card">
+        <h3>Modelo de bio</h3>
+        <p class="copytext" id="bio">Nutricionista | CRN-__ (coloque seu número)
+Alimentação sem dieta radical, para quem tem de 20 a 60 anos
+📍 Delmiro Gouveia - AL | Presencial e online
+👇 Agende sua consulta</p>
+        <button class="btn soft" data-copy="bio">Copiar bio</button>
+      </article>
+
+      <article class="card">
+        <h3>Progresso do perfil</h3>
+        <p id="perfilCount" class="lead"></p>
+        <div class="prog" aria-hidden="true"><i id="perfilBar"></i></div>
+      </article>
+
+      <div id="perfilGroups" class="stack" style="margin-top:0"></div>
+
+      <article class="card">
+        <h3>Frases para fechar cada post</h3>
+        <div id="ctas" class="stack" style="margin-top:0"></div>
+      </article>
+
+      <article class="card">
+        <h3>Hashtags locais</h3>
+        <p class="copytext" id="tags">#delmirogouveia #nutricionistadelmirogouveia #sertaoalagoano #alagoas</p>
+        <button class="btn soft" data-copy="tags">Copiar hashtags</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="tab-regras" aria-label="Regras do CFN" hidden>
+    <h2 class="title">Cuidados com as regras do CFN</h2>
+    <p class="lead">O Conselho Federal de Nutricionistas limita alguns tipos de divulgação. Confira antes de publicar.</p>
+    <div class="stack">
+      <article class="card">
+        <h3>Evite</h3>
+        <ul>
+          <li>Prometer resultado, como “perca 5 kg em 30 dias”</li>
+          <li>Antes e depois de forma sensacionalista</li>
+          <li>Preço ou promoção com apelo exagerado</li>
+          <li>Dar diagnóstico ou orientação individual em comentários e mensagens abertas</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Faça</h3>
+        <ul>
+          <li>Coloque nome completo e número do CRN no perfil e nas divulgações</li>
+          <li>Peça autorização por escrito antes de usar depoimento ou foto de paciente</li>
+          <li>Use conteúdo educativo e honesto, sem exagero</li>
+          <li>Convide a pessoa para uma consulta quando o caso for individual</li>
+        </ul>
+      </article>
+      <p class="note">As regras podem mudar. Confirme a resolução vigente no site do CFN ou no CRN da sua região antes de publicar. Os textos deste guia são sugestões e devem ser adaptados ao jeito da Ariana.</p>
+    </div>
+  </section>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var DIAS=["Seg","Ter","Qua","Qui","Sex","Sáb","Dom"];
+  var HASH="#delmirogouveia #nutricionistadelmirogouveia #sertaoalagoano #alagoas";
+  var CTAS=[
+    "Quer um plano para o seu caso? Chame no WhatsApp e agende sua consulta.",
+    "Comente QUERO que eu te envio os horários da semana.",
+    "Salve este post e envie para quem precisa.",
+    "Atendo em Delmiro Gouveia e online. O link do WhatsApp está na bio."
+  ];
+
+  var POSTS=[
+    {f:"Reels",p:"Todos",t:"Cuscuz engorda?",g:"Cuscuz engorda? Depende do que vai no prato ao lado dele.",
+     r:["Mostre um prato só de cuscuz e outro montado com ovo, fruta e um pouco de queijo","Explique em 20 segundos: o cuscuz não é o vilão, o equilíbrio do prato é que conta","Feche convidando para a consulta"],
+     l:"O cuscuz faz parte do nosso café da manhã e não precisa sair da mesa. O que muda a conta é a quantidade e o que vem junto com ele. Veja como montar um café da manhã nordestino equilibrado."},
+    {f:"Carrossel",p:"20 a 30 anos",t:"3 erros que fazem você desistir da dieta",g:"3 erros que fazem você desistir da dieta antes de criar o hábito.",
+     r:["Capa: 3 erros que fazem você desistir da dieta","Erro 1: pular refeições para compensar","Erro 2: cortar tudo de uma vez","Erro 3: copiar a dieta de outra pessoa","Último slide: convite para a consulta"],
+     l:"Dieta que não cabe na sua rotina dura pouco. Um plano feito para o seu dia, com a comida que você gosta, fica mais fácil de manter. Salve este post para lembrar."},
+    {f:"Stories",p:"Todos",t:"Apresentação e caixinha de perguntas",g:"Oi, eu sou a Ariana, nutricionista aqui em Delmiro Gouveia.",
+     r:["Story 1: você falando para a câmera, quem é e quem atende","Story 2: caixinha “Qual a sua maior dúvida sobre alimentação?”","Story 3: avise que vai responder nos próximos dias"],
+     l:"Oi, eu sou a Ariana Silva, nutricionista em Delmiro Gouveia. Atendo presencial e online. Me conta aqui a sua maior dúvida sobre alimentação que eu respondo."},
+    {f:"Reels",p:"30 a 45 anos",t:"Sono depois do almoço",g:"Bate sono às 15h depois do almoço? Olhe para o seu prato.",
+     r:["Mostre um prato só de arroz e carne e outro com vegetais, feijão e proteína","Explique de forma simples o papel das fibras e da proteína","Diga que cada corpo é diferente e convide para avaliação"],
+     l:"Um prato com fibras, proteína e vegetais costuma deixar a digestão mais tranquila e a energia mais estável ao longo da tarde. Cada corpo é diferente, por isso o ideal é avaliar a sua rotina."},
+    {f:"Receita em vídeo",p:"Todos",t:"Tapioca recheada e equilibrada",g:"Tapioca no café da manhã pode, sim. Olha como eu monto a minha.",
+     r:["Mostre os ingredientes: tapioca, ovo, tomate e um pouco de queijo coalho","Grave o preparo em ritmo rápido","Termine mostrando o prato pronto e falando o que ele tem de bom"],
+     l:"Tapioca com ovo, tomate e queijo coalho em pequena quantidade. Simples, rápida e com ingredientes que a gente encontra aqui. Ingredientes e modo de preparo nos comentários."},
+    {f:"Stories",p:"Todos",t:"Horários da semana e como é a consulta",g:"Como é a primeira consulta comigo, passo a passo.",
+     r:["Story 1: conte o que acontece na consulta (conversa, avaliação, plano)","Story 2: diga quanto tempo dura e como é o retorno","Story 3: mostre os horários livres da próxima semana"],
+     l:"Na primeira consulta a gente conversa sobre sua rotina, o que você come e o que você quer melhorar. Depois eu monto um plano que caiba na sua vida. Tenho horários livres na próxima semana, me chame no WhatsApp."},
+    {f:"Stories",p:"Todos",t:"Bastidores: preparo da semana",g:"Domingo é dia de organizar a semana da alimentação.",
+     r:["Mostre a feira ou as compras","Mostre uma marmita sendo preparada","Diga que segunda tem post novo"],
+     l:"Domingo é dia de organizar a semana. Um pouco de preparo ajuda muito a comer melhor sem correria. Amanhã tem conteúdo novo por aqui."},
+
+    {f:"Reels",p:"Todos",t:"Macaxeira, inhame ou batata?",g:"Macaxeira, inhame ou batata: qual escolher no prato?",
+     r:["Mostre os três alimentos lado a lado","Explique que todos podem entrar, o que muda é a porção e o preparo","Dê um exemplo de prato montado"],
+     l:"Os três são boas fontes de energia e podem fazer parte da sua alimentação. Cozidos e em porção adequada, cabem no dia a dia. Quer saber quanto é o ideal para você? A consulta responde."},
+    {f:"Carrossel",p:"45 a 60 anos",t:"Colesterol alto: 5 trocas simples no prato",g:"Colesterol alto? 5 trocas simples que você pode fazer hoje.",
+     r:["Capa: 5 trocas simples no prato","Trocar fritura por assado ou cozido","Colocar mais fibras: aveia, frutas e verduras","Cuidar do tipo de gordura usada","Convite para avaliação individual"],
+     l:"Pequenas trocas no dia a dia ajudam no cuidado com o colesterol. Quem tem diagnóstico deve seguir também a orientação médica. Salve este post e mostre para quem precisa."},
+    {f:"Stories",p:"Todos",t:"Enquete e depoimento",g:"Você toma café da manhã todos os dias?",
+     r:["Story 1: enquete “Você toma café da manhã todo dia? Sim ou não”","Story 2: comente o resultado da enquete","Story 3: depoimento de paciente, somente com autorização"],
+     l:"Vamos falar de café da manhã! Responda a enquete e depois eu conto o que costuma ajudar mais nessa refeição."},
+    {f:"Reels",p:"45 a 60 anos",t:"Menopausa e peso",g:"Depois dos 45, por que a alimentação pede outros ajustes?",
+     r:["Fale de forma acolhedora sobre as mudanças do corpo","Cite proteína, fibras e movimento como parte da conversa","Diga que o cuidado é individual e convide para consulta"],
+     l:"Depois dos 45, o corpo muda e a rotina de alimentação pode precisar de ajustes. Proteína, fibras e movimento entram nessa conversa. Cada mulher é única, então o cuidado é individual."},
+    {f:"Receita em vídeo",p:"Todos",t:"Marmita de trabalhador com ingredientes da feira",g:"Marmita boa e barata com o que a gente acha na feira.",
+     r:["Mostre a feira ou os ingredientes básicos","Monte a marmita: feijão, arroz, legume, proteína e salada","Mostre a marmita pronta e diga o custo aproximado, se souber"],
+     l:"Marmita equilibrada não precisa ser cara. Com feijão, arroz, legumes, uma proteína e salada, você monta um prato completo. Ingredientes nos comentários."},
+    {f:"Stories",p:"Todos",t:"Vagas da semana",g:"Tenho horários livres para a próxima semana.",
+     r:["Story 1: mostre a agenda com os horários livres","Story 2: lembre que atende presencial e online","Story 3: botão do WhatsApp"],
+     l:"Últimos horários da semana. Se você quer organizar sua alimentação, me chame no WhatsApp e agende."},
+    {f:"Stories",p:"Todos",t:"Bastidores: um dia no consultório",g:"Um dia de atendimento por aqui.",
+     r:["Mostre o consultório ou o ambiente","Fale de uma pergunta comum dos pacientes","Convide para acompanhar a semana"],
+     l:"Um pouco da rotina no consultório. Cuidar da alimentação é dar um passo de cada vez, e eu estou aqui para acompanhar."},
+
+    {f:"Reels",p:"Todos",t:"Carne de sol e queijo coalho: dá para comer?",g:"Carne de sol e queijo coalho: dá para comer sem culpa?",
+     r:["Mostre um prato com carne de sol, macaxeira e salada","Explique porção, frequência e o que colocar junto","Convide para montar um plano com a comida que a pessoa gosta"],
+     l:"A comida da nossa região pode fazer parte do seu plano. O que conta é a porção, a frequência e o que vem junto no prato. Quer um plano sem cortar o que você gosta? Vamos conversar."},
+    {f:"Carrossel",p:"20 a 30 anos",t:"Comer para ganhar massa sem gastar muito",g:"Como comer para ganhar massa gastando pouco.",
+     r:["Capa: comer para ganhar massa sem gastar muito","Ovos, feijão, frango e leite como base","Distribuir proteína ao longo do dia","Exemplo de um dia de comida","Convite para a consulta"],
+     l:"Ganhar massa não depende de comprar produtos caros. Uma boa base de comida de verdade já ajuda muito. Marque um amigo que treina."},
+    {f:"Stories",p:"Todos",t:"Caixinha de perguntas respondida",g:"Vocês perguntaram e eu respondi.",
+     r:["Story 1: mostre 2 perguntas recebidas","Story 2: responda em vídeo curto","Story 3: convide para mais perguntas"],
+     l:"Respondendo as dúvidas que vocês mandaram. Se a sua não apareceu, manda de novo que eu respondo na próxima."},
+    {f:"Reels",p:"30 a 45 anos",t:"Efeito sanfona",g:"Por que muita gente emagrece e depois volta ao peso?",
+     r:["Explique que dieta muito restritiva costuma ser difícil de manter","Fale de hábitos possíveis de manter na rotina","Convide para acompanhamento"],
+     l:"Planos muito rígidos são difíceis de manter. Um acompanhamento com ajustes graduais e comida do seu dia a dia costuma ser mais sustentável. Vamos conversar sobre a sua rotina?"},
+    {f:"Receita em vídeo",p:"30 a 45 anos",t:"Lanche rápido para levar ao trabalho",g:"Lanche prático que cabe na bolsa e na sua rotina.",
+     r:["Mostre 2 ou 3 opções simples","Explique como guardar e transportar","Mostre um lanche pronto"],
+     l:"Ter um lanche pronto evita comer qualquer coisa quando bate a fome. Ideias simples e práticas para o seu dia. Salve para usar na próxima semana."},
+    {f:"Stories",p:"Todos",t:"Primeira consulta em vídeo",g:"Veja o que acontece na primeira consulta.",
+     r:["Story 1: você explicando a consulta em 30 segundos","Story 2: depoimento de paciente, com autorização","Story 3: horários livres e botão do WhatsApp"],
+     l:"Se você tem receio de ir a uma nutricionista, vem ver como é. É uma conversa tranquila, sem julgamento. Me chame para agendar."},
+    {f:"Stories",p:"Todos",t:"Pergunta que os pacientes sempre fazem",g:"Uma dúvida que aparece em quase toda consulta.",
+     r:["Conte a dúvida","Responda em um vídeo curto","Convide a mandar outras dúvidas"],
+     l:"Essa pergunta aparece sempre, então resolvi responder por aqui. Se você tem outra, manda que eu respondo."},
+
+    {f:"Reels",p:"Todos",t:"Calor do sertão: o que comer e beber",g:"Calor forte por aqui: o que comer e beber para se sentir melhor.",
+     r:["Fale de água, frutas e alimentos leves","Cite água de coco, melancia e saladas","Lembre que quem tem doença crônica deve seguir orientação individual"],
+     l:"No calor, hidratação e refeições mais leves ajudam a aguentar melhor o dia. Água, frutas e saladas entram bem na rotina. Cada pessoa tem necessidades diferentes, então vale conversar."},
+    {f:"Carrossel",p:"30 a 45 anos",t:"TPM e alimentação",g:"TPM e alimentação: o que pode ajudar no dia a dia.",
+     r:["Capa: TPM e alimentação","Refeições regulares e fibras","Cuidar de cafeína e ultraprocessados","Observar o próprio corpo","Convite para acompanhamento"],
+     l:"A alimentação pode ser aliada nesse período. Observe o que muda no seu corpo e converse com um profissional para adaptar o seu caso. Marque uma amiga que precisa ver isso."},
+    {f:"Stories",p:"Todos",t:"Bastidores do atendimento",g:"Um pouco do que acontece por aqui.",
+     r:["Mostre o material de atendimento (sem expor dados de pacientes)","Explique como monta um plano alimentar","Deixe o botão do WhatsApp"],
+     l:"Cada plano alimentar é montado para a pessoa, com a rotina e a comida que ela gosta. Se você quer um plano assim, me chame."},
+    {f:"Reels",p:"45 a 60 anos",t:"Glicose alta: 3 hábitos para o dia a dia",g:"Glicose alta? 3 hábitos simples para o dia a dia.",
+     r:["Fale de fibras e porções equilibradas","Comente sobre horários regulares","Lembre da importância do acompanhamento médico e nutricional"],
+     l:"Hábitos simples ajudam no cuidado com a glicose. Quem tem diagnóstico deve seguir a orientação médica e nutricional. Vem conversar sobre o seu caso."},
+    {f:"Receita em vídeo",p:"Todos",t:"Sobremesa leve com fruta da região",g:"Sobremesa gostosa com fruta daqui, sem complicação.",
+     r:["Mostre a fruta da estação (banana, goiaba, caju ou manga)","Prepare de forma simples","Mostre a sobremesa pronta"],
+     l:"Fruta pode virar sobremesa de um jeito simples e gostoso. Ingredientes e preparo nos comentários. Salve para fazer no fim de semana."},
+    {f:"Stories",p:"Todos",t:"Consulta online para outras cidades",g:"Moro em outra cidade, posso ser atendido? Sim.",
+     r:["Story 1: diga que atende por vídeo","Story 2: cite as cidades da região","Story 3: mostre horários e botão do WhatsApp"],
+     l:"Você mora em Água Branca, Pariconha, Piranhas, Olho d’Água do Casado, Mata Grande ou Paulo Afonso? Também posso te atender online. Me chame no WhatsApp."},
+    {f:"Stories",p:"Todos",t:"Retrospectiva do mês",g:"Como foi o mês por aqui.",
+     r:["Recapitule os posts mais vistos","Agradeça a quem interagiu","Anuncie o que vem no próximo mês"],
+     l:"Obrigada por acompanhar este mês. No próximo tem mais conteúdo e novas receitas. Se você quer cuidar da alimentação, meu WhatsApp está na bio."},
+    {f:"Reels",p:"Todos",t:"5 coisas que eu como todo dia",g:"5 coisas que eu como todos os dias como nutricionista.",
+     r:["Mostre 5 alimentos do seu dia","Fale rapidamente de cada um","Diga que o seu prato é o seu, e o da paciente é individual"],
+     l:"Esse é o meu dia a dia, mas cada pessoa é diferente. Quer saber o que combina com a sua rotina? Vamos conversar."},
+    {f:"Carrossel",p:"Todos",t:"Resumo: o que mudar no prato hoje",g:"Resumo do mês: o que você já pode mudar no prato hoje.",
+     r:["Capa: o que mudar no prato hoje","Mais vegetais e fibras","Proteína em todas as refeições","Comida da região com equilíbrio","Convite para a consulta"],
+     l:"Um resumo de tudo o que conversamos este mês. Comece por uma mudança e, se quiser um plano para o seu caso, me chame."}
+  ];
+
+  var PERFIL=[
+    {t:"Perfil do Instagram",i:[
+      ["bio","A bio diz quem ela atende, onde atende e chama para agendar"],
+      ["whats","Link do WhatsApp na bio, com mensagem pronta"],
+      ["dest","Destaques criados: Como funciona, Valores e horários, Depoimentos e Dúvidas"],
+      ["crn","Nome e número do CRN visíveis no perfil"]]},
+    {t:"Google Meu Negócio",i:[
+      ["g1","Consultório cadastrado com endereço, telefone e horário"],
+      ["g2","Fotos do espaço e dela atendendo"],
+      ["g3","Primeiras avaliações pedidas a pacientes"],
+      ["g4","Descrição com a busca “nutricionista em Delmiro Gouveia”"]]},
+    {t:"Atendimento",i:[
+      ["a1","Mensagem pronta com valor, duração e formas de pagamento"],
+      ["a2","Resposta no WhatsApp em até 1 hora no horário comercial"],
+      ["a3","Horários livres da semana nos Stories todo sábado"]]},
+    {t:"Ofertas",i:[
+      ["o1","Pacote de retorno definido"],
+      ["o2","Condição especial do mês para a primeira consulta, dentro das regras do CFN"],
+      ["o3","Consulta online divulgada para as cidades vizinhas"]]}
+  ];
+
+  /* estado */
+  function sget(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}}
+  function sset(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  var st={start:sget("as_start",null),done:sget("as_done",[]),perfil:sget("as_perfil",[]),view:null};
+
+  function toast(msg){
+    var t=document.getElementById("toast");t.textContent=msg;t.className="on";
+    clearTimeout(toast._t);toast._t=setTimeout(function(){t.className=""},1800);
+  }
+  function copy(text){
+    function fallback(){
+      var ta=document.createElement("textarea");ta.value=text;ta.setAttribute("readonly","");
+      ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();
+      var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+      document.body.removeChild(ta);toast(ok?"Copiado":"Não consegui copiar. Selecione o texto e copie.");
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){toast("Copiado")},fallback);
+    }else fallback();
+  }
+  function pad(n){return n<10?"0"+n:""+n}
+  function todayISO(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+  function parseISO(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+  function fmtBR(s){var p=s.split("-");return p[2]+"/"+p[1]}
+  function dayNumber(){
+    if(!st.start)return null;
+    var a=parseISO(st.start),b=parseISO(todayISO());
+    return Math.round((b-a)/864e5)+1;
+  }
+  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+  function fullText(i){
+    var p=POSTS[i-1],cta=CTAS[(i-1)%CTAS.length];
+    return p.f==="Stories"?p.l+"\n\n"+cta:p.l+"\n\n"+cta+"\n\n"+HASH;
+  }
+  function isDone(i){return st.done.indexOf(i)>-1}
+  function toggleDone(i){
+    var k=st.done.indexOf(i);
+    if(k>-1)st.done.splice(k,1);else st.done.push(i);
+    sset("as_done",st.done);
+  }
+
+  /* prato de 30 dias */
+  function plateSVG(cur,view){
+    var cx=110,cy=110,r=88,out='<svg class="plate" viewBox="0 0 220 220" role="img" aria-label="Prato com os 30 dias do plano">';
+    for(var i=1;i<=30;i++){
+      var a=(-90+(i-1)*12)*Math.PI/180,x=(cx+r*Math.cos(a)).toFixed(1),y=(cy+r*Math.sin(a)).toFixed(1);
+      var cls="dot"+(isDone(i)?" done":"")+(i===cur?" today":"")+(i===view?" view":"");
+      out+='<circle class="'+cls+'" data-day="'+i+'" cx="'+x+'" cy="'+y+'" r="7.5" tabindex="0" role="button" aria-label="Dia '+i+(isDone(i)?", postado":"")+'"></circle>';
+    }
+    out+='<text x="110" y="112" font-size="44" font-weight="700">'+(view||"")+'</text>';
+    out+='<text x="110" y="140" font-size="15" opacity=".85">de 30 dias</text></svg>';
+    return out;
+  }
+
+  /* HOJE */
+  function renderHoje(){
+    var el=document.getElementById("tab-hoje"),n=dayNumber(),html="";
+    if(!st.start){
+      html='<div class="hero">'+plateSVG(null,null)+'<div class="hero-txt"><h2>Comece o plano de 30 dias</h2>'
+        +'<p class="meta">Um post por dia, com roteiro e texto prontos. O ideal é começar numa segunda-feira.</p>'
+        +'<div class="start-form"><label for="startDate">Data de início</label>'
+        +'<input type="date" id="startDate" value="'+todayISO()+'">'
+        +'<button class="btn" id="startBtn">Começar plano</button></div></div></div>'
+        +'<p class="note">Enquanto isso, veja o plano completo na aba “Plano de 30 dias”.</p>';
+      el.innerHTML=html;
+      document.getElementById("startBtn").onclick=function(){
+        var v=document.getElementById("startDate").value||todayISO();
+        st.start=v;sset("as_start",v);st.view=null;renderAll();toast("Plano iniciado");
+      };
+      bindPlate(el);return;
+    }
+    var cur=n<1?0:(n>30?31:n);
+    if(st.view==null)st.view=n<1?1:(n>30?30:n);
+    var v=st.view,p=POSTS[v-1],dw=DIAS[(v-1)%7];
+    var head=n<1?'O plano começa em '+fmtBR(st.start)
+      :(n>30?'Plano concluído. Você postou '+st.done.length+' de 30 dias.'
+      :(v===n?'Hoje é o dia '+v+' ('+dw+')':'Dia '+v+' ('+dw+')'));
+    var roteiroTitulo=p.f==="Carrossel"?"Slides":(p.f==="Stories"?"Sequência de Stories":"Roteiro");
+    var textoTitulo=p.f==="Stories"?"Texto para falar":"Legenda pronta";
+    html='<div class="hero">'+plateSVG(cur<=30?cur:null,v)+'<div class="hero-txt">'
+      +'<p class="meta">'+esc(head)+'</p>'
+      +'<h2>'+esc(p.t)+'</h2>'
+      +'<div class="chips"><span class="chip">'+esc(p.f)+'</span><span class="chip">'+esc(p.p)+'</span>'
+      +(isDone(v)?'<span class="chip">Postado</span>':'')+'</div></div></div>'
+      +'<div class="stack">'
+      +'<article class="card"><h3>Comece assim</h3><p class="hook">'+esc(p.g)+'</p></article>'
+      +'<article class="card"><h3>'+roteiroTitulo+'</h3><ul>'+p.r.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul></article>'
+      +'<article class="card"><h3>'+textoTitulo+'</h3><p class="copytext" id="fullText">'+esc(fullText(v))+'</p>'
+      +'<div class="row"><button class="btn" id="copyBtn">Copiar texto</button>'
+      +'<button class="btn soft" id="doneBtn">'+(isDone(v)?'Desmarcar postado':'Marcar como postado')+'</button></div></article>'
+      +'<div class="nav-days"><button class="btn ghost" id="prevBtn"'+(v<=1?' disabled':'')+'>Dia anterior</button>'
+      +'<button class="btn ghost" id="nextBtn"'+(v>=30?' disabled':'')+'>Próximo dia</button></div>'
+      +'<div class="row"><button class="btn soft" id="resetBtn">Recomeçar plano</button></div>'
+      +'</div>';
+    el.innerHTML=html;
+    document.getElementById("copyBtn").onclick=function(){copy(fullText(v))};
+    document.getElementById("doneBtn").onclick=function(){toggleDone(v);renderAll();};
+    document.getElementById("prevBtn").onclick=function(){st.view=Math.max(1,v-1);renderHoje()};
+    document.getElementById("nextBtn").onclick=function(){st.view=Math.min(30,v+1);renderHoje()};
+    document.getElementById("resetBtn").onclick=function(){
+      if(confirm("Apagar as marcações e escolher uma nova data de início?")){
+        st.start=null;st.done=[];st.view=null;sset("as_start",null);sset("as_done",[]);renderAll();
+      }
+    };
+    bindPlate(el);
+  }
+  function bindPlate(root){
+    var dots=root.querySelectorAll(".dot");
+    for(var i=0;i<dots.length;i++){
+      (function(d){
+        function go(){if(!st.start)return;st.view=+d.getAttribute("data-day");renderHoje();window.scrollTo(0,0)}
+        d.addEventListener("click",go);
+        d.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}});
+      })(dots[i]);
+    }
+  }
+
+  /* PLANO */
+  function renderPlano(){
+    var n=dayNumber(),out="";
+    for(var w=0;w<5;w++){
+      var from=w*7+1,to=Math.min(from+6,30);
+      out+='<div class="week"><h3>Semana '+(w+1)+(w===4?' (2 dias finais)':'')+'</h3>';
+      if(w===0)out+='<p class="wnote">Comece numa segunda-feira para seguir o ritmo da semana.</p>';
+      out+='<ul class="days">';
+      for(var d=from;d<=to;d++){
+        var p=POSTS[d-1],cls="day"+(d===n?" is-today":"")+(isDone(d)?" is-done":"");
+        out+='<li class="'+cls+'"><input type="checkbox" data-done="'+d+'" id="dn'+d+'" aria-label="Postado no dia '+d+'"'+(isDone(d)?' checked':'')+'>'
+          +'<button class="open" data-open="'+d+'"><b>'+DIAS[(d-1)%7]+' · '+esc(p.t)+'</b><span>'+esc(p.f)+' · '+esc(p.p)+'</span></button></li>';
+      }
+      out+='</ul></div>';
+    }
+    var wrap=document.getElementById("weeks");wrap.innerHTML=out;
+    wrap.onclick=function(e){
+      var o=e.target.closest("[data-open]");
+      if(o){st.view=+o.getAttribute("data-open");if(!st.start){toast("Inicie o plano na aba Hoje para ver o texto pronto");return}show("hoje");renderHoje();window.scrollTo(0,0);}
+    };
+    wrap.onchange=function(e){
+      var c=e.target.getAttribute("data-done");
+      if(c){toggleDone(+c);renderAll()}
+    };
+  }
+
+  /* PERFIL */
+  function renderPerfil(){
+    var out="",total=0,ok=0;
+    PERFIL.forEach(function(g){
+      out+='<article class="card"><h3>'+esc(g.t)+'</h3>';
+      g.i.forEach(function(it){
+        total++;var c=st.perfil.indexOf(it[0])>-1;if(c)ok++;
+        out+='<div class="check"><input type="checkbox" id="pf_'+it[0]+'" data-pf="'+it[0]+'"'+(c?' checked':'')+'><label for="pf_'+it[0]+'">'+esc(it[1])+'</label></div>';
+      });
+      out+='</article>';
+    });
+    var box=document.getElementById("perfilGroups");box.innerHTML=out;
+    document.getElementById("perfilCount").textContent=ok+" de "+total+" itens feitos";
+    document.getElementById("perfilBar").style.width=Math.round(ok/total*100)+"%";
+    box.onchange=function(e){
+      var k=e.target.getAttribute("data-pf");if(!k)return;
+      var i=st.perfil.indexOf(k);if(i>-1)st.perfil.splice(i,1);else st.perfil.push(k);
+      sset("as_perfil",st.perfil);renderPerfil();
+    };
+    var cs="";
+    CTAS.forEach(function(c,i){
+      cs+='<div><p class="copytext" id="cta'+i+'">'+esc(c)+'</p><button class="btn soft" data-copy="cta'+i+'">Copiar frase</button></div>';
+    });
+    document.getElementById("ctas").innerHTML=cs;
+  }
+
+  /* abas */
+  function show(name){
+    ["hoje","plano","publicos","perfil","regras"].forEach(function(t){
+      document.getElementById("tab-"+t).hidden=(t!==name);
+    });
+    var tabs=document.querySelectorAll(".tab");
+    for(var i=0;i<tabs.length;i++){
+      if(tabs[i].getAttribute("data-tab")===name)tabs[i].setAttribute("aria-current","page");
+      else tabs[i].removeAttribute("aria-current");
+    }
+  }
+  document.querySelector(".tabs").addEventListener("click",function(e){
+    var b=e.target.closest(".tab");if(!b)return;
+    show(b.getAttribute("data-tab"));window.scrollTo(0,0);
+  });
+  document.addEventListener("click",function(e){
+    var c=e.target.closest("[data-copy]");
+    if(c){var el=document.getElementById(c.getAttribute("data-copy"));if(el)copy(el.textContent)}
+  });
+
+  function renderAll(){renderHoje();renderPlano();renderPerfil()}
+  renderAll();show("hoje");
+})();
+</script>
+</body>
+</html>
